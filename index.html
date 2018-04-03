@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=10.0">
+    <title>Minijax</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/highlight.googlecode.css" rel="stylesheet">
+    <link href="css/minijax.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <main role="main">
+
+      <div class="jumbotron">
+        <div class="container" style="text-align: center">
+          <h1>Minijax</h1>
+          <p>Fast, simple, lightweight Java EE</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <p>
+            Minijax is a Java library for quickly creating production-ready Java EE web applications.
+          </p>
+          <p>
+            Minijax is like Spring Boot and Dropwizard, but faster, lighter, and easier.
+          </p>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <h2>Features</h2>
+            <ul>
+              <li>Create stand-alone Java applications (no Application Servers, no WAR files)</li>
+              <li>Embedded Undertow for fast HTTP</li>
+              <li>Integrated JAX-RS for HTTP routing (no Jersey)</li>
+              <li>Integrated CDI for dependency injection (no Spring or Guice)</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <h2>Quick Start</h2>
+            <p>pom.xml</p>
+            <pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.minijax&lt;/groupId&gt;
+    &lt;artifactId&gt;minijax-core&lt;/artifactId&gt;
+    &lt;version&gt;0.2.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+        </div>
+
+        <div class="row">
+            <p>Hello.java</p>
+            <pre><code class="java">import javax.ws.rs.*;
+
+@Path("/")
+public class Hello {
+
+    @GET
+    public static String hello() {
+        return "Hello world!";
+    }
+
+    public static void main(String[] args) {
+        new org.minijax.Minijax()
+                .register(Hello.class)
+                .start();
+    }
+}</code></pre>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <h2>Extensions</h2>
+            <ul>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-json">minijax-json</a> - Jackson for JSON serialization including JAXB, Afterburner</li>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-websocket">minijax-websocket</a> - Undertow for JSR 356 compliant websockets</li>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-mustache">minijax-mustache</a> - Mustache for HTML templating</li>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-db">minijax-db</a> - Eclipselink for JPA, ORM, connection pooling, cluster coordination</li>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-liquibase">minijax-liquibase</a> - Liquibase for database migrations</li>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-swagger">minijax-swagger</a> - Swagger for automatic API documentation</li>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-security">minijax-security</a> - Library for user account management, login, logout</li>
+              <li><a href="https://github.com/minijax/minijax/tree/master/minijax-extensions/minijax-cloudwatch">minijax-cloudwatch</a> - SLF4J logger for AWS CloudWatch</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <h2>Examples</h2>
+          <div class="example">
+            <p>Hello World</p>
+            <p><a href="https://github.com/minijax/minijax/blob/master/minijax-examples/minijax-example-hello"><img src="img/examples/hello.png"></a></p>
+          </div>
+          <div class="example">
+            <p>Hello JSON</p>
+            <p><a href="https://github.com/minijax/minijax/blob/master/minijax-examples/minijax-example-json"><img src="img/examples/hello-json.png"></a></p>
+          </div>
+          <div class="example">
+            <p>Mustache</p>
+            <p><a href="https://github.com/minijax/minijax/blob/master/minijax-examples/minijax-example-mustache"><img src="img/examples/mustache.png"></a></p>
+          </div>
+          <div class="example">
+            <p>Swagger</p>
+            <p><a href="https://github.com/minijax/minijax/blob/master/minijax-examples/minijax-example-swagger"><img src="img/examples/swagger.png"></a></p>
+          </div>
+          <div class="example">
+            <p>Minitwit</p>
+            <p><a href="https://github.com/minijax/minijax/blob/master/minijax-examples/minijax-example-minitwit"><img src="img/examples/minitwit.png"></a></p>
+          </div>
+          <div class="example">
+            <p>Pet Clinic</p>
+            <p><a href="https://github.com/minijax/minijax/blob/master/minijax-examples/minijax-example-petclinic"><img src="img/examples/petclinic.png"></a></p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <h2>Performance</h2>
+            <p>Numbers from the most recent <a href="https://www.techempower.com/benchmarks">Techempower Benchmarks</a></p>
+            <h4>Plain Text</h4>
+            <p>
+              <img class="img-fluid" src="img/techempower-15/plain-text.png">
+            </p>
+            <h4>JSON Serialization</h4>
+            <p>
+              <img class="img-fluid" src="img/techempower-15/json-serialization.png">
+            </p>
+            <h4>Database Queries</h4>
+            <p>
+              <img class="img-fluid" src="img/techempower-15/multiple-queries.png">
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <h2>External Links</h2>
+            <ul>
+              <li><a href="https://github.com/minijax/minijax">Github</a> - Source and issue tracking</li>
+              <li><a href="https://travis-ci.org/minijax/minijax">Travis CI</a> - Build server</li>
+              <li><a href="https://sonarcloud.io/dashboard?id=org.minijax%3Aminijax">Sonar</a> - Static analysis</li>
+              <li><a href="https://minijax.org/maven/0.2.0/apidocs/">Javadocs</a> - API documentation</li>
+              <li><a href="https://minijax.org/maven/0.2.0/">Maven Site</a> - Library documentation</li>
+              <li><a href="https://mvnrepository.com/artifact/org.minijax">Maven Central</a> - Maven artifacts</li>
+            </ul>
+        </div>
+
+        <hr>
+
+      </div>
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; <a href="https://www.ajibot.com">Ajibot</a> 2017-2018</p>
+    </footer>
+
+    <script src="js/highlight.js"></script>
+    <script src="js/minijax.js"></script>
+  </body>
+</html>
