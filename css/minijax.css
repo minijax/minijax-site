@@ -9,6 +9,10 @@ main {
   margin: auto;
 }
 
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
 .jumbotron {
   padding: 40px 0;
 }
@@ -23,7 +27,7 @@ pre {
 }
 
 p, li {
-  line-height: 125%;
+  line-height: 150%;
 }
 
 hr {
@@ -43,7 +47,7 @@ img {
 .example {
   display: inline-block;
   margin: 10px;
-  width: 400px;
+  width: 350px;
   text-align: center;
 }
 
