@@ -1,0 +1,4 @@
+baseURL = "https://minijax.org/"
+languageCode = "en-us"
+title = "Minijax"
+theme = "minijax-theme"
