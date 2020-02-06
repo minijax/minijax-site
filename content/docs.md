@@ -2,7 +2,7 @@
 title: "Documentation"
 ---
 
-##### [Maven Site](https://maven.minijax.org/{{< param version >}}/)
+##### [Maven Site](https://maven.minijax.org/{{< param version >}}/index.html)
 
 The Maven Site includes standard Maven project information such as:
 * Dependency details
