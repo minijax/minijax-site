@@ -3,6 +3,11 @@
     font-family: sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 a,
 h1,
 h2,
@@ -11,9 +16,35 @@ h4,
 h5,
 h6,
 div,
-p {
+p,
+td,
+th {
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+h6 {
+    font-size: 14px;
 }
 
 a:hover {
@@ -27,12 +58,17 @@ header {
     padding: 16px 64px;
 }
 
-header > a {
+header > section {
+    margin: auto;
+    max-width: 1200px;
+}
+
+header > section > a {
     font-size: 20px;
     font-weight: 600;
 }
 
-header > a > small {
+header > section > a > small {
     font-size: 14px;
     font-weight: 200;
 }
@@ -47,6 +83,33 @@ nav a {
     font-weight: 600;
 }
 
-section {
-    padding: 16px 64px;
+main {
+    margin: 0;
+    padding: 0;
+}
+
+main > section {
+    margin: 0;
+    padding: 32px 64px 48px;
+}
+
+main > section > article {
+    margin: auto;
+    max-width: 1200px;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+
+td,
+th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
 }
