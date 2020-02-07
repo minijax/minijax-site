@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html {{ with .Site.LanguageCode }} lang="{{ . }}" {{ end }}>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {{ if eq .IsHome false }}
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  {{ else }}
+  <title>{{ .Site.Title }}</title>
+  {{ end }}
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header>
+    <section>
+      <a href="/">Minijax <small>v0.4.15</small></a>
+      <nav>
+        <a href="/docs/">Docs</a>
+        <a href="/examples/">Examples</a>
+        <a href="/resources/">Resources</a>
+      </nav>
+    </section>
+  </header>
+  {{ block "main" . }}
+  {{ end }}
+</body>
+
+</html>

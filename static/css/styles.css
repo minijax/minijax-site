@@ -16,10 +16,12 @@ h4,
 h5,
 h6,
 div,
+li,
 p,
 td,
 th {
     color: rgba(0, 0, 0, 0.7);
+    line-height: 150%;
     text-decoration: none;
 }
 
