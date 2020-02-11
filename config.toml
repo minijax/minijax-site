@@ -1,0 +1,14 @@
+baseURL = "https://minijax.org/"
+languageCode = "en-us"
+title = "Minijax"
+
+[params]
+  version = "0.4.15"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "lovelace"
