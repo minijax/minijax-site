@@ -1,0 +1,81 @@
+{{ define "main" }}
+<main>
+  <section>
+    <article>
+      <h2>Minijax</h2>
+      <p>Fast, simple, lightweight Java EE</p>
+      <p>Minijax is a Java library for quickly creating production-ready Java EE web applications.</p>
+    </article>
+  </section>
+  <section class="getting-started">
+    <article>
+      <h4 id="getting-started">Getting Started</h4>
+      <p>pom.xml</p>
+      <div class="highlight">
+        <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.minijax<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>minijax-undertow<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version</span><span class="nt">&gt;</span>{{ $.Site.Params.version }}<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre>
+      </div>
+      <p>Hello.java</p>
+      <div class="highlight">
+        <pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.ws.rs.*</span><span class="o">;</span>
+
+<span class="nd">@Path</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hello</span> <span class="o">{</span>
+
+  <span class="nd">@GET</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">hello</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&#34;Hello world!&#34;</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">new</span> <span class="n">org</span><span class="o">.</span><span class="na">minijax</span><span class="o">.</span><span class="na">Minijax</span><span class="o">(</span><span class="o">)</span>
+              <span class="o">.</span><span class="na">register</span><span class="o">(</span><span class="n">Hello</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+              <span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+      </div>
+    </article>
+  </section>
+  <section class="benchmarks">
+    <article>
+      <h4>Benchmarks</h4>
+      <p>Comparison with other full featured Java web frameworks:</p>
+      <h5>Plaintext</h5>
+      <img src="/techempower-benchmarks-round18/plaintext.png" title="Plaintext">
+      <h5>JSON</h5>
+      <img src="/techempower-benchmarks-round18/json.png" title="JSON">
+      <h5>Fortunes (Mustache templates)</h5>
+      <img src="/techempower-benchmarks-round18/fortunes.png" title="Fortunes">
+      <h5>Single query (MySQL)</h5>
+      <img src="/techempower-benchmarks-round18/single-query.png" title="Single query">
+      <h5>Multiple queries (MySQL)</h5>
+      <img src="/techempower-benchmarks-round18/multiple-queries.png" title="Multiple queries">
+      <p>See <a
+          href="https://www.techempower.com/benchmarks/#section=data-r18&hw=cl&test=fortune&l=zik0vz-f&d=e5&f=pmv5-0-pa8-75-0-7ruo-8vnjb4-abj7o-4fueio-10">Techempower
+          Benchmarks Round 18</a> for more details.</p>
+    </article>
+  </section>
+  <section class="principles">
+    <article>
+      <h4 id="principles">Principles</h4>
+      <div>
+        <h5>Fast</h5>
+        <p>All features should be fast at build time, startup, and runtime</p>
+      </div>
+      <div>
+        <h5>Simple</h5>
+        <p>Follow standard conventions, make the common case easy</p>
+      </div>
+      <div>
+        <h5>Lightweight</h5>
+        <p>Minimal dependencies necessary to cover the specification</p>
+      </div>
+    </article>
+  </section>
+</main>
+{{ end }}

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Copy files to S3
-aws s3 sync ./ s3://minijax.org/ --region us-west-2 --acl public-read --size-only --exclude ".git/*" --exclude ".DS_Store"
+aws s3 cp --recursive ./public s3://minijax.org/ --region us-west-2 --exclude ".DS_Store"
 
 # Create CloudFront invalidation
-aws cloudfront create-invalidation --distribution-id EREBT907K0HF9 --paths "/" "/index.html" "/css/*" "/img/*" "/js/*"
+aws cloudfront create-invalidation --distribution-id EB74ISGX86TTQ --paths "/index.html"
 
